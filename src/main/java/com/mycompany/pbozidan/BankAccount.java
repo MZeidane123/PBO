@@ -9,17 +9,17 @@ package com.mycompany.pbozidan;
  * @author LENOVO
  */
 public class BankAccount {
-    // Memenuhi syarat atribut private, total lebih dari 5 atribut jika digabung dengan class Customer
+
     private String accountNumber;
     private double balance;
     private Customer owner;
 
-    // Constructor ke-2
+
     public BankAccount(String accountNumber, Customer owner, double initialBalance) {
         this.accountNumber = accountNumber;
         this.owner = owner;
         
-        // Validation Logic 2: Saldo awal tidak boleh negatif
+
         if (initialBalance >= 0) {
             this.balance = initialBalance;
         } else {
@@ -28,14 +28,14 @@ public class BankAccount {
         }
     }
 
-    // Constructor ke-3 (Overloading - memenuhi syarat minimal 2 constructor)
+
     public BankAccount(String accountNumber, Customer owner) {
-        this(accountNumber, owner, 0.0); // Default saldo 0 jika tidak diinput
+        this(accountNumber, owner, 0.0);
     }
 
-    // Method operasional rekening (memenuhi syarat minimal 6 method dalam sistem)
+    
     public void deposit(double amount) {
-        // Validation Logic 3: Deposit harus lebih dari 0
+        
         if (amount > 0) {
             balance += amount;
             System.out.println("Berhasil: Deposit Rp" + amount + " ke rekening " + accountNumber);
@@ -45,7 +45,7 @@ public class BankAccount {
     }
 
     public void withdraw(double amount) {
-        // Validation Logic 4: Tarik tunai validasi jumlah dan ketersediaan saldo
+        
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             System.out.println("Berhasil: Penarikan Rp" + amount + " dari rekening " + accountNumber);
